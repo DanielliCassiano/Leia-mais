@@ -1,0 +1,29 @@
+<header class="general-header container">
+  <section class="row height-1hundred-percent">
+    <img class="logo" src="../assets/logo.png" alt="">
+    <div class="col">
+      <h1>Leia Mais</h1>
+    </div>
+    <nav class="height-1hundred-percent col">
+      <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="gap-2 height-1hundred-percent">
+        <li [ngbNavItem]="1">
+          <button class="btn btn-primary-green button-activated" routerLink="/">Vitrine</button>
+          <ng-template ngbNavContent>Vitrine</ng-template>
+        </li>
+        <li [ngbNavItem]="2">
+          <button class="btn btn-primary" routerLink="/livros">Livros</button>
+          <ng-template ngbNavContent>Livros</ng-template>
+        </li>
+        <li [ngbNavItem]="3">
+          <button class="btn btn-primary">Editoras</button>
+          <ng-template ngbNavContent>Editoras</ng-template>
+        </li>
+      </ul>
+    </nav>
+  </section>
+</header>
+
+<div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+<router-outlet></router-outlet>
+

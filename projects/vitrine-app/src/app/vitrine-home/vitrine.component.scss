@@ -1,0 +1,38 @@
+
+@import "../../../../../node_modules/bootstrap/scss/functions";
+@import "../../../../../node_modules/bootstrap/scss//variables";
+
+$custom-colors: (
+    "primary-green": rgb(119, 204, 204),
+    "primary-orange": rgb(255, 154, 82)
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+section {
+    padding-top: 29px !important;
+}
+
+.logo {
+    width: 60px !important;
+    height: 35px;
+}
+
+h1 {
+    color: $orange;
+}
+.general-header {
+    height: 90px;
+}
+
+.height-1hundred-percent {
+height: 100%;
+}
+
+.button-activated {
+    border: none !important;
+    color: #CEF2F1 !important;
+    border-radius: unset !important;
+}
+
+@import "../../../../../node_modules/bootstrap/scss/bootstrap.scss";
