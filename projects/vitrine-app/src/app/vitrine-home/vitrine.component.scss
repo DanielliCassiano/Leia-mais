@@ -18,6 +18,18 @@ section {
     height: 35px;
 }
 
+.image-banner {
+    width: 890px;
+    height: 280px;
+}
+
+.image-vitrine-block {
+    width: 248px;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+}
+
 h1 {
     color: $orange;
 }
@@ -33,6 +45,17 @@ height: 100%;
     border: none !important;
     color: #CEF2F1 !important;
     border-radius: unset !important;
+}
+
+span {
+    justify-content: center;
+}
+
+footer {
+    background-color: #A4BDBC;
+    height: 70px;
+    margin-top: 57px;
+    margin-bottom: 0px;
 }
 
 @import "../../../../../node_modules/bootstrap/scss/bootstrap.scss";
