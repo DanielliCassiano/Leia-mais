@@ -1,0 +1,77 @@
+
+@import "../../../../../node_modules/bootstrap/scss/functions";
+@import "../../../../../node_modules/bootstrap/scss//variables";
+
+$custom-colors: (
+    "primary-green": rgb(119, 204, 204),
+    "primary-orange": rgb(255, 154, 82)
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+section {
+    padding-top: 29px !important;
+}
+
+.logo {
+    width: 60px !important;
+    height: 35px;
+}
+
+.image-banner {
+    width: 890px;
+    height: 280px;
+}
+
+.image-vitrine-block {
+    width: 248px;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: $orange;
+}
+.general-header {
+    height: 90px;
+}
+
+.height-1hundred-percent {
+height: 100%;
+}
+
+.button-activated {
+    border: none !important;
+    color: #CEF2F1 !important;
+    border-radius: unset !important;
+}
+
+span {
+    justify-content: center;
+}
+
+footer {
+    background-color: #A4BDBC;
+    height: 70px;
+    margin-top: 57px;
+    margin-bottom: 0px;
+}
+
+
+@import "../../../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+// After this section it's all livros's mdodule
+
+.h1-justify {
+    justify-content: center;
+    align-content: center;
+}
+
+.description-picture-area {
+    width: 322px;
+}
+
+.form-fiels-area {
+    width: 826px;
+}
