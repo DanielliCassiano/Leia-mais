@@ -5,14 +5,13 @@ import { RouterOutlet } from '@angular/router';
 import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
-	declarations: [
-		VitrineComponent
-	],
 	imports: [
     CommonModule,
 		RouterOutlet,
-		NgbNavModule
+		NgbNavModule,
+		VitrineComponent
 	],
 	exports: [RouterOutlet]
 })
-export class VitrineModule {}
+export class VitrineModule {
+}

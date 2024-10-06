@@ -1,6 +1,6 @@
 <header class="general-header container">
   <section class="row height-1hundred-percent">
-    <img class="logo" src="../assets/logo.png" alt="">
+    <img class="logo" src="../../assets/logo.png" alt="">
     <div class="col">
       <h1>Leia Mais</h1>
     </div>
@@ -11,19 +11,104 @@
           <ng-template ngbNavContent>Vitrine</ng-template>
         </li>
         <li [ngbNavItem]="2">
-          <button class="btn btn-primary" routerLink="/livros">Livros</button>
+          <button class="btn btn-primary-green button-activated" routerLink="/livros">Livros</button>
           <ng-template ngbNavContent>Livros</ng-template>
         </li>
         <li [ngbNavItem]="3">
-          <button class="btn btn-primary">Editoras</button>
+          <button class="btn btn-primary-green button-activated">Editoras</button>
           <ng-template ngbNavContent>Editoras</ng-template>
         </li>
       </ul>
     </nav>
   </section>
 </header>
+<body class="container">
+  <main class="row">
+    <section class="col">
+      <ngb-carousel class="image-banner">
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper">
+            <img class="image-banner" src="../../assets/carousel-images/Dune_Concept_Art_Illustration_01_M02.jpg" alt="Random first slide" />
+          </div>
+          <div class="carousel-caption">
+            <h3>First slide label</h3>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper">
+            <img class="image-banner" src="../../assets/carousel-images/Dune_Concept_Art_Illustration_01_M02.jpg" alt="Random second slide" />
+          </div>
+          <div class="carousel-caption">
+            <h3>Second slide label</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper">
+            <img class="image-banner" src="../../assets/carousel-images/Dune_Concept_Art_Illustration_01_M02.jpg" alt="Random third slide" />
+          </div>
+          <div class="carousel-caption">
+            <h3>Third slide label</h3>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </section>
+    <section class="col">
+      <div class="container">
+        <ul ngbNav #nav="ngbNav" class="row gap-2">
+          <li class="row">
+            <button class="btn btn-primary-green button-activated col" routerLink="/">Novos</button>
+          </li>
+          <li class="row">
+            <button class="btn btn-primary-green button-activated col" routerLink="/livros">50% de desconto</button>
+          </li>
+          <li class="row">
+            <button class="btn btn-primary-green button-activated col">Estilo mais popular</button>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <section class="container">
+    <section class="row">
+      <h2>Novos</h2>
+    </section>
+    <section class="row">
+      <div class="col">
+        <section class="container">
+          <img class="image-vitrine-block row" src="../../assets/carousel-images/Dune_Concept_Art_Illustration_01_M02.jpg" alt="Random second slide" />
+          <span class="row">Carrie</span>
+        </section>
+      </div>
+      <div class="col">
+        <section class="container">
+          <img class="image-vitrine-block row" src="../../assets/carousel-images/Dune_Concept_Art_Illustration_01_M02.jpg" alt="Random second slide" />
+          <span class="row">Carrie</span>
+        </section>
+      </div>
+      <div class="col">
+        <section class="container">
+          <img class="image-vitrine-block row" src="../../assets/carousel-images/Dune_Concept_Art_Illustration_01_M02.jpg" alt="Random second slide" />
+          <span class="row">Carrie</span>
+        </section>
+      </div>
+      <div class="col">
+        <section class="container">
+          <img class="image-vitrine-block row" src="../../assets/carousel-images/Dune_Concept_Art_Illustration_01_M02.jpg" alt="Random second slide" />
+          <span class="row">Carrie</span>
+        </section>
+      </div>
+    </section>
+  </section>
+</body>
 
-<div [ngbNavOutlet]="nav" class="mt-2"></div>
+<footer>
+  <section>
+   [ <!--  Put here the GitHub icon/link -->]
+  </section>
+</footer>
 
 <router-outlet></router-outlet>
 

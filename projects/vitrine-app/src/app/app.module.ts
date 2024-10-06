@@ -4,6 +4,8 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VitrineModule } from './vitrine-home/vitrine.module';
+import  { VitrineComponent } from './vitrine-home/vitrine.component';
+
 
 @NgModule({
   declarations: [
@@ -12,7 +14,8 @@ import { VitrineModule } from './vitrine-home/vitrine.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    VitrineModule
+    VitrineModule,
+    VitrineComponent
   ],
   providers: [
     provideClientHydration()
