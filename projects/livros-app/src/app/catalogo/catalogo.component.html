@@ -64,7 +64,7 @@
           </section>
           <section class="container between-itemList-items">
             <section class="row space-section">
-              <div class="col item-list-area">
+              <div *ngFor="let livro of livros$ | async" class="col item-list-area  between-itemList-items">
                 <div class="item-list">
                   <div class="container">
                     <div class="row">
@@ -74,19 +74,19 @@
                       <section class="col">
                         <div class="container">
                           <section class="row">
-                            <span>My test</span>
+                            <span>{{ livro.title }}: {{ livro.subTitle }}</span>
                           </section>
                           <section class="row between-itemList-items">
-                            <span>My test</span>
+                            <span> {{ livro.authorName }}</span>
                           </section>
                           <section class="row between-itemList-items">
                             <div class="container book-item-info">
                               <div class="row">
                                 <div class="col">
-                                  <span>My test</span>
+                                  <span> {{ livro.publisher }}</span>
                                 </div>
                                 <div class="col">
-                                  <span>My test</span>
+                                  <span>{{ livro.geners }}</span>
                                 </div>
                               </div>
                             </div>
@@ -96,229 +96,10 @@
                       <section class="col">
                         <div class="container">
                           <div class="row">
-                            <span>My test</span>
+                            <span>{{ livro.price }}</span>
                           </div>
                           <div>
-                            <button>My test</button>
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col item-list-area">
-                <div class="item-list">
-                  <div class="container">
-                    <div class="row">
-                      <section class="col">
-                        <img class="img-book-list" src="../../assets/logo.png" alt="">
-                      </section>
-                      <section class="col">
-                        <div class="container">
-                          <section class="row">
-                            <span>My test</span>
-                          </section>
-                          <section class="row between-itemList-items">
-                            <span>My test</span>
-                          </section>
-                          <section class="row between-itemList-items">
-                            <div class="container book-item-info">
-                              <div class="row">
-                                <div class="col">
-                                  <span>My test</span>
-                                </div>
-                                <div class="col">
-                                  <span>My test</span>
-                                </div>
-                              </div>
-                            </div>
-                          </section>
-                        </div>
-                      </section>
-                      <section class="col">
-                        <div class="container">
-                          <div class="row">
-                            <span>My test</span>
-                          </div>
-                          <div>
-                            <button>My test</button>
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section class="row space-section">
-              <div class="col item-list-area">
-                <div class="item-list">
-                  <div class="container">
-                    <div class="row">
-                      <section class="col">
-                        <img class="img-book-list" src="../../assets/logo.png" alt="">
-                      </section>
-                      <section class="col">
-                        <div class="container">
-                          <section class="row">
-                            <span>My test</span>
-                          </section>
-                          <section class="row between-itemList-items">
-                            <span>My test</span>
-                          </section>
-                          <section class="row between-itemList-items">
-                            <div class="container book-item-info">
-                              <div class="row">
-                                <div class="col">
-                                  <span>My test</span>
-                                </div>
-                                <div class="col">
-                                  <span>My test</span>
-                                </div>
-                              </div>
-                            </div>
-                          </section>
-                        </div>
-                      </section>
-                      <section class="col">
-                        <div class="container">
-                          <div class="row">
-                            <span>My test</span>
-                          </div>
-                          <div>
-                            <button>My test</button>
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col item-list-area">
-                <div class="item-list">
-                  <div class="container">
-                    <div class="row">
-                      <section class="col">
-                        <img class="img-book-list" src="../../assets/logo.png" alt="">
-                      </section>
-                      <section class="col">
-                        <div class="container">
-                          <section class="row">
-                            <span>My test</span>
-                          </section>
-                          <section class="row between-itemList-items">
-                            <span>My test</span>
-                          </section>
-                          <section class="row between-itemList-items">
-                            <div class="container book-item-info">
-                              <div class="row">
-                                <div class="col">
-                                  <span>My test</span>
-                                </div>
-                                <div class="col">
-                                  <span>My test</span>
-                                </div>
-                              </div>
-                            </div>
-                          </section>
-                        </div>
-                      </section>
-                      <section class="col">
-                        <div class="container">
-                          <div class="row">
-                            <span>My test</span>
-                          </div>
-                          <div>
-                            <button>My test</button>
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section class="row space-section">
-              <div class="col item-list-area">
-                <div class="item-list">
-                  <div class="container">
-                    <div class="row">
-                      <section class="col">
-                        <img class="img-book-list" src="../../assets/logo.png" alt="">
-                      </section>
-                      <section class="col">
-                        <div class="container">
-                          <section class="row">
-                            <span>My test</span>
-                          </section>
-                          <section class="row between-itemList-items">
-                            <span>My test</span>
-                          </section>
-                          <section class="row between-itemList-items">
-                            <div class="container book-item-info">
-                              <div class="row">
-                                <div class="col">
-                                  <span>My test</span>
-                                </div>
-                                <div class="col">
-                                  <span>My test</span>
-                                </div>
-                              </div>
-                            </div>
-                          </section>
-                        </div>
-                      </section>
-                      <section class="col">
-                        <div class="container">
-                          <div class="row">
-                            <span>My test</span>
-                          </div>
-                          <div>
-                            <button>My test</button>
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col item-list-area">
-                <div class="item-list">
-                  <div class="container">
-                    <div class="row">
-                      <section class="col">
-                        <img class="img-book-list" src="../../assets/logo.png" alt="">
-                      </section>
-                      <section class="col">
-                        <div class="container">
-                          <section class="row">
-                            <span>My test</span>
-                          </section>
-                          <section class="row between-itemList-items">
-                            <span>My test</span>
-                          </section>
-                          <section class="row between-itemList-items">
-                            <div class="container book-item-info">
-                              <div class="row">
-                                <div class="col">
-                                  <span>My test</span>
-                                </div>
-                                <div class="col">
-                                  <span>My test</span>
-                                </div>
-                              </div>
-                            </div>
-                          </section>
-                        </div>
-                      </section>
-                      <section class="col">
-                        <div class="container">
-                          <div class="row">
-                            <span>My test</span>
-                          </div>
-                          <div>
-                            <button>My test</button>
+                            <button (click)="open()">Acessar livro</button>
                           </div>
                         </div>
                       </section>
@@ -330,7 +111,7 @@
           </section>
         </div>
       </section>
-    </section>
+    </section> 
   </main>
 </body>
 

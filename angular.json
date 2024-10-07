@@ -46,6 +46,12 @@
 					},
 					"configurations": {
 						"production": {
+							"fileReplacements": [
+                {
+                  "replace": "projects/livros-app/src/environments/environment.ts",
+                  "with": "projects/livros-app/src/environments/environment.prod.ts"
+                }
+              ],
 							"budgets": [
 								{
 									"type": "initial",
@@ -158,6 +164,12 @@
 					},
 					"configurations": {
 						"production": {
+							"fileReplacements": [
+                {
+                  "replace": "projects/vitrine-app/src/environments/environment.ts",
+                  "with": "projects/vitrine-app/src/environments/environment.prod.ts"
+                }
+              ],
 							"budgets": [
 								{
 									"type": "initial",
@@ -271,6 +283,12 @@
 					},
 					"configurations": {
 						"production": {
+							"fileReplacements": [
+                {
+                  "replace": "projects/editoras-app/src/environments/environment.ts",
+                  "with": "projects/editoras-app/src/environments/environment.prod.ts"
+                }
+              ],
 							"budgets": [
 								{
 									"type": "initial",

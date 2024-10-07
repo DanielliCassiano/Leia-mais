@@ -27,7 +27,7 @@
     <section class="col">
       <h1 class="h1-justify">Adicionar um novo livro ao catálogo</h1>
     </section>
-    <form class="container form-group">
+    <form class="container form-group" [formGroup]="newBookForm" (ngSubmit)="onSubmit()">
       <section class="row">
         <div class="col">
           <fieldset class="container">
@@ -36,7 +36,7 @@
               <section class="container">
                 <div class="row">
                   <label for="description-input">Descrição</label>
-                  <input type="text" class="form-control" id="description-input" aria-describedby="descriptionTextBox" placeholder="Insira aqui a descrição do livro">
+                  <input formControlName="description" type="text" class="form-control" id="description-input" aria-describedby="descriptionTextBox" placeholder="Insira aqui a descrição">
                 </div>
               </section>
             </div>
@@ -48,36 +48,37 @@
               <section class="container">
                 <div class="row">
                   <div class="col">
-                    <label for="description-input">Descrição</label>
-                    <input type="text" class="form-control" id="description-input" aria-describedby="descriptionTextBox" placeholder="Insira aqui a descrição do livro">
+                    <label for="title-input">Título</label>
+                    <input formControlName="title" type="text" class="form-control" id="title-input" aria-describedby="titleTextBox" placeholder="Informe o título">
                   </div>
                   <div class="col">
-                    <label for="description-input">Descrição</label>
-                    <input type="text" class="form-control" id="description-input" aria-describedby="descriptionTextBox" placeholder="Insira aqui a descrição do livro">
+                    <label for="subtitle-input">Subtítulo</label>
+                    <input formControlName="subTitle" type="text" class="form-control" id="subtitle-input" aria-describedby="subtitleTextBox" placeholder="Informe o subtítulo">
                   </div>
                 </div>
                 <div class="row">
                   <div class="col">
-                    <label for="description-input">Descrição</label>
-                    <input type="text" class="form-control" id="description-input" aria-describedby="descriptionTextBox" placeholder="Insira aqui a descrição do livro">
+                    <label for="authorName-input">Nome do autor</label>
+                    <input formControlName="authorName" type="text" class="form-control" id="authorName-input" aria-describedby="authorNameTextBox" placeholder="Informe o nome do autor">
                   </div>
                   <div class="col">
-                    <div ngbDropdown class="d-inline-block">
-                      <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
-                        Toggle dropdown
-                      </button>
-                      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                        <button ngbDropdownItem>Action - 1</button>
-                        <button ngbDropdownItem>Another Action</button>
-                        <button ngbDropdownItem>Something else is here</button>
+                    <div class="row">
+                      <label for="dropdown-publisher">Editora</label>
+                      <div class="col">
+                        <select formControlName="publisher" name="publisher" id="dropdown-publisher">
+                          <option [defaultSelected]=true value="default" >Selecione uma editora</option>
+                          <option *ngFor="let publisher of publishers" Value="publisher">
+                            {{ publisher }}
+                          </option>
+                        </select>                        
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col">
-                    <label for="description-input">Descrição</label>
-                    <input type="text" class="form-control" id="description-input" aria-describedby="descriptionTextBox" placeholder="Insira aqui a descrição do livro">
+                    <label for="releaseDate-input">Data de publicação</label>
+                    <input formControlName="releaseDate" type="text" class="form-control" id="releaseDate-input" aria-describedby="releaseDateTextBox" placeholder="Informe data de publicação">
                   </div>
                   <div class="col">
                     <div class="container">
@@ -85,12 +86,12 @@
                         <label>Disponível</label>
                         <div class="col">
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                            <label class="form-check-label" for="inlineRadio1">1</label>
+                            <input formControlName="available" class="form-check-input" type="radio" name="available" id="yes-inlineRadio" value="yes">
+                            <label class="form-check-label" for="yes-inlineRadio">Sim</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                            <label class="form-check-label" for="inlineRadio2">2</label>
+                            <input formControlName="available"  class="form-check-input" type="radio" name="available" id="no-inlineRadio" value="no">
+                            <label class="form-check-label" for="no-inlineRadio2">Não</label>
                           </div>
                         </div>
                       </div>
@@ -99,30 +100,31 @@
                 </div>
                 <div class="row">
                   <div class="col">
-                    <div ngbDropdown class="d-inline-block">
-                      <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
-                        Toggle dropdown
-                      </button>
-                      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                        <button ngbDropdownItem>Action - 1</button>
-                        <button ngbDropdownItem>Another Action</button>
-                        <button ngbDropdownItem>Something else is here</button>
+                    <div class="row">
+                      <label for="dropdown-genres">Gênero principal</label>
+                      <div class="col">
+                        <select formControlName="geners" name="geners" id="dropdown-geners">
+                          <option [defaultSelected]=true value="default" >Selecione um gênero</option>
+                          <option *ngFor="let gener of geners" Value="gener">
+                            {{ gener }}
+                          </option>
+                        </select>                         
                       </div>
                     </div>
                   </div>
                   <div class="col">
-                    <label for="description-input">Descrição</label>
-                    <input type="text" class="form-control" id="description-input" aria-describedby="descriptionTextBox" placeholder="Insira aqui a descrição do livro">
+                    <label for="language-input">Idioma</label>
+                    <input formControlName="language" type="text" class="form-control" id="language-input" aria-describedby="languageTextBox" placeholder="Informe o idioma">
                   </div>
                 </div>
                 <div class="row">
                   <div class="col">
-                    <label for="description-input">Descrição</label>
-                    <input type="text" class="form-control" id="description-input" aria-describedby="descriptionTextBox" placeholder="Insira aqui a descrição do livro">
+                    <label for="price-input">Valor por unidade</label>
+                    <input formControlName="price" type="text" class="form-control" id="price-input" aria-describedby="priceTextBox" placeholder="Informe o preço">
                   </div>
                   <div class="col">
-                    <label for="description-input">Descrição</label>
-                    <input type="text" class="form-control" id="description-input" aria-describedby="descriptionTextBox" placeholder="Insira aqui a descrição do livro">
+                    <label for="pagesNum-input">Número de páginas</label>
+                    <input formControlName="pagesNum" type="text" class="form-control" id="pagesNum-input" aria-describedby="pagesNumTextBox" placeholder="Informe o número de páginas">
                   </div>
                 </div>
               </section>
@@ -132,7 +134,7 @@
       </section>
       <section class="row">
         <div class="col">
-          <button class="btn btn-primary-green button-activated">Adicionar</button>
+          <button [disabled]="!newBookForm.valid" type="submit" class="btn btn-primary-green button-activated">Adicionar</button>
         </div>
       </section>
     </form>
