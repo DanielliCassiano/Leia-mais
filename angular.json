@@ -27,7 +27,8 @@
 						"outputPath": "dist/livros-app",
 						"index": "projects/livros-app/src/index.html",
 						"polyfills": [
-							"zone.js"
+							"zone.js",
+							"@angular/localize/init"
 						],
 						"tsConfig": "projects/livros-app/tsconfig.app.json",
 						"inlineStyleLanguage": "scss",
@@ -251,7 +252,8 @@
 						"outputPath": "dist/editoras-app",
 						"index": "projects/editoras-app/src/index.html",
 						"polyfills": [
-							"zone.js"
+							"zone.js",
+							"@angular/localize/init"
 						],
 						"tsConfig": "projects/editoras-app/tsconfig.app.json",
 						"inlineStyleLanguage": "scss",
