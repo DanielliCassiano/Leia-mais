@@ -1,0 +1,32 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "description": "Carrie é um romance epistolar de terror do autor estadunidense Stephen King. Foi seu primeiro romance publicado, lançado em 5 de abril de 1974",
+      "title": "Carrie",
+      "subTitle": "a estranha",
+      "authorName": "Stephen King",
+      "publisher": "publisher",
+      "releaseDate": "05/04/1974",
+      "available": "yes",
+      "geners": "gener",
+      "language": "Português",
+      "price": "29,90",
+      "pagesNum": "200"
+    },
+    {
+      "id": "3d7f",
+      "description": "Teste",
+      "title": "deed",
+      "subTitle": "ddd",
+      "authorName": "Stephen King",
+      "publisher": "publisher",
+      "releaseDate": "ddd",
+      "available": "yes",
+      "geners": "gener",
+      "language": "dd",
+      "price": "ddd",
+      "pagesNum": "200"
+    }
+  ]
+}
