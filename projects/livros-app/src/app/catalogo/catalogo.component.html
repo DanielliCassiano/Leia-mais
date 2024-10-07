@@ -1,0 +1,344 @@
+<header class="general-header container space-section">
+  <section class="row height-1hundred-percent">
+    <img class="logo" src="../../assets/logo.png" alt="">
+    <div class="col">
+      <h1>Leia Mais</h1>
+    </div>
+    <nav class="height-1hundred-percent col">
+      <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="gap-2 height-1hundred-percent">
+        <li [ngbNavItem]="1">
+          <button class="btn btn-primary-green button-activated" routerLink="/">Vitrine</button>
+          <ng-template ngbNavContent>Vitrine</ng-template>
+        </li>
+        <li [ngbNavItem]="2">
+          <button class="btn btn-primary-green button-activated" routerLink="/livros">Livros</button>
+          <ng-template ngbNavContent>Livros</ng-template>
+        </li>
+        <li [ngbNavItem]="3">
+          <button class="btn btn-primary-green button-activated">Editoras</button>
+          <ng-template ngbNavContent>Editoras</ng-template>
+        </li>
+      </ul>
+    </nav>
+  </section>
+</header>
+<body class="container space-section">
+  <main class="row">
+    <section class="col">
+      <h2 class="h1-justify">Catálogo de livros</h2>
+    </section>
+    <div class="col">
+      <label for="description-input">Descrição</label>
+      <input type="text" class="form-control" id="description-input" aria-describedby="descriptionTextBox" placeholder="Localizar por título, gênero...">
+    </div>
+    <section class="container">
+      <section class="row">
+        <div class="col">
+          <section class="container">
+            <div class="row filters-area">
+              <div class="col">
+                <div ngbDropdown class="d-inline-block">
+                  <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+                    Toggle dropdown
+                  </button>
+                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button ngbDropdownItem>Action - 1</button>
+                    <button ngbDropdownItem>Another Action</button>
+                    <button ngbDropdownItem>Something else is here</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div ngbDropdown class="d-inline-block">
+                  <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+                    Toggle dropdown
+                  </button>
+                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button ngbDropdownItem>Action - 1</button>
+                    <button ngbDropdownItem>Another Action</button>
+                    <button ngbDropdownItem>Something else is here</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="container between-itemList-items">
+            <section class="row space-section">
+              <div class="col item-list-area">
+                <div class="item-list">
+                  <div class="container">
+                    <div class="row">
+                      <section class="col">
+                        <img class="img-book-list" src="../../assets/logo.png" alt="">
+                      </section>
+                      <section class="col">
+                        <div class="container">
+                          <section class="row">
+                            <span>My test</span>
+                          </section>
+                          <section class="row between-itemList-items">
+                            <span>My test</span>
+                          </section>
+                          <section class="row between-itemList-items">
+                            <div class="container book-item-info">
+                              <div class="row">
+                                <div class="col">
+                                  <span>My test</span>
+                                </div>
+                                <div class="col">
+                                  <span>My test</span>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                        </div>
+                      </section>
+                      <section class="col">
+                        <div class="container">
+                          <div class="row">
+                            <span>My test</span>
+                          </div>
+                          <div>
+                            <button>My test</button>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col item-list-area">
+                <div class="item-list">
+                  <div class="container">
+                    <div class="row">
+                      <section class="col">
+                        <img class="img-book-list" src="../../assets/logo.png" alt="">
+                      </section>
+                      <section class="col">
+                        <div class="container">
+                          <section class="row">
+                            <span>My test</span>
+                          </section>
+                          <section class="row between-itemList-items">
+                            <span>My test</span>
+                          </section>
+                          <section class="row between-itemList-items">
+                            <div class="container book-item-info">
+                              <div class="row">
+                                <div class="col">
+                                  <span>My test</span>
+                                </div>
+                                <div class="col">
+                                  <span>My test</span>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                        </div>
+                      </section>
+                      <section class="col">
+                        <div class="container">
+                          <div class="row">
+                            <span>My test</span>
+                          </div>
+                          <div>
+                            <button>My test</button>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="row space-section">
+              <div class="col item-list-area">
+                <div class="item-list">
+                  <div class="container">
+                    <div class="row">
+                      <section class="col">
+                        <img class="img-book-list" src="../../assets/logo.png" alt="">
+                      </section>
+                      <section class="col">
+                        <div class="container">
+                          <section class="row">
+                            <span>My test</span>
+                          </section>
+                          <section class="row between-itemList-items">
+                            <span>My test</span>
+                          </section>
+                          <section class="row between-itemList-items">
+                            <div class="container book-item-info">
+                              <div class="row">
+                                <div class="col">
+                                  <span>My test</span>
+                                </div>
+                                <div class="col">
+                                  <span>My test</span>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                        </div>
+                      </section>
+                      <section class="col">
+                        <div class="container">
+                          <div class="row">
+                            <span>My test</span>
+                          </div>
+                          <div>
+                            <button>My test</button>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col item-list-area">
+                <div class="item-list">
+                  <div class="container">
+                    <div class="row">
+                      <section class="col">
+                        <img class="img-book-list" src="../../assets/logo.png" alt="">
+                      </section>
+                      <section class="col">
+                        <div class="container">
+                          <section class="row">
+                            <span>My test</span>
+                          </section>
+                          <section class="row between-itemList-items">
+                            <span>My test</span>
+                          </section>
+                          <section class="row between-itemList-items">
+                            <div class="container book-item-info">
+                              <div class="row">
+                                <div class="col">
+                                  <span>My test</span>
+                                </div>
+                                <div class="col">
+                                  <span>My test</span>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                        </div>
+                      </section>
+                      <section class="col">
+                        <div class="container">
+                          <div class="row">
+                            <span>My test</span>
+                          </div>
+                          <div>
+                            <button>My test</button>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="row space-section">
+              <div class="col item-list-area">
+                <div class="item-list">
+                  <div class="container">
+                    <div class="row">
+                      <section class="col">
+                        <img class="img-book-list" src="../../assets/logo.png" alt="">
+                      </section>
+                      <section class="col">
+                        <div class="container">
+                          <section class="row">
+                            <span>My test</span>
+                          </section>
+                          <section class="row between-itemList-items">
+                            <span>My test</span>
+                          </section>
+                          <section class="row between-itemList-items">
+                            <div class="container book-item-info">
+                              <div class="row">
+                                <div class="col">
+                                  <span>My test</span>
+                                </div>
+                                <div class="col">
+                                  <span>My test</span>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                        </div>
+                      </section>
+                      <section class="col">
+                        <div class="container">
+                          <div class="row">
+                            <span>My test</span>
+                          </div>
+                          <div>
+                            <button>My test</button>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col item-list-area">
+                <div class="item-list">
+                  <div class="container">
+                    <div class="row">
+                      <section class="col">
+                        <img class="img-book-list" src="../../assets/logo.png" alt="">
+                      </section>
+                      <section class="col">
+                        <div class="container">
+                          <section class="row">
+                            <span>My test</span>
+                          </section>
+                          <section class="row between-itemList-items">
+                            <span>My test</span>
+                          </section>
+                          <section class="row between-itemList-items">
+                            <div class="container book-item-info">
+                              <div class="row">
+                                <div class="col">
+                                  <span>My test</span>
+                                </div>
+                                <div class="col">
+                                  <span>My test</span>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                        </div>
+                      </section>
+                      <section class="col">
+                        <div class="container">
+                          <div class="row">
+                            <span>My test</span>
+                          </div>
+                          <div>
+                            <button>My test</button>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </section>
+        </div>
+      </section>
+    </section>
+  </main>
+</body>
+
+<footer>
+  <section class="space-section">
+    <!--  Put here the GitHub icon/link -->
+  </section>
+</footer>
+
+<router-outlet></router-outlet>
+

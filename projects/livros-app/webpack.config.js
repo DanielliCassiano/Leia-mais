@@ -28,8 +28,7 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-        library: { type: "module" },
-        name: 'livrosApp', // this name needs to match with the entry name
+        name: 'livrosApp', 
         filename: 'remoteEntry.js',
         exposes: {
           './LivrosModule': './projects/livros-app/src/app/livros/livros.module.ts'

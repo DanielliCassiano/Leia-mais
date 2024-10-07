@@ -1,0 +1,87 @@
+
+@import "../../../../../node_modules/bootstrap/scss/functions";
+@import "../../../../../node_modules/bootstrap/scss//variables";
+
+$custom-colors: (
+    "primary-green": rgb(119, 204, 204),
+    "primary-orange": rgb(255, 154, 82)
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+.space-section, .between-itemList-items {
+    padding-top: 29px;
+}
+
+.logo {
+    width: 60px !important;
+    height: 35px;
+}
+
+.image-banner {
+    width: 890px;
+    height: 280px;
+}
+
+.image-vitrine-block {
+    width: 248px;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: $orange;
+}
+.general-header {
+    height: 90px;
+}
+
+.height-1hundred-percent {
+height: 100%;
+}
+
+.button-activated {
+    border: none !important;
+    color: #CEF2F1 !important;
+    border-radius: unset !important;
+}
+
+span {
+    justify-content: center;
+}
+
+footer {
+    background-color: #A4BDBC;
+    height: 70px;
+    margin-top: 57px;
+    margin-bottom: 0px;
+}
+
+
+@import "../../../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+// After this section it's all catalogo's mdodule
+
+
+.filters-area {
+    width: 400px;
+}
+
+.item-list {
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: #E7E7E7;
+    width: 461px;
+    height: 171px;
+}
+
+.img-book-list {
+    width: 86px;
+    height: 88px;
+}
+
+.book-item-info {
+    width: 120px;
+    height: 128px;
+}
