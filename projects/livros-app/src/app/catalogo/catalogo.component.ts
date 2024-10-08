@@ -5,7 +5,7 @@ import { NgbCarouselModule, NgbModal, NgbDropdownModule, NgbNavModule } from '@n
 import { LivrosService } from '../services/livros.service';
 import { Livro } from '../interfaces/livro';
 import { Observable } from 'rxjs';
-import { NgbdModalContentComponent } from '../components/modal/modal.component';
+import { ModalCatalogo } from '../components/modal/modal.component';
 
 @Component({
   selector: 'app-root',
@@ -17,15 +17,17 @@ import { NgbdModalContentComponent } from '../components/modal/modal.component';
     NgbNavModule, 
     RouterModule,
     NgbDropdownModule,
-    CommonModule
+    CommonModule,
   ],
 })
 
 
-export class CatalogoComponent {
+export class CatalogoComponent implements OnInit {
   active = 1 
   livros: Livro[];
   livros$: Observable<Livro[]>;
+
+  @Input() newBookForm :any;
 
   constructor(private  service: LivrosService) {}
 
@@ -35,8 +37,13 @@ export class CatalogoComponent {
 
   private modalService = inject(NgbModal);
 
-	open() {
-		const modalRef = this.modalService.open(NgbdModalContentComponent, { size: 'lg' });
+
+	open(livro: any) {
+		const modalRef = this.modalService.open(ModalCatalogo, { size: 'lg' });
 		modalRef.componentInstance.name = 'World';
+    console.log(livro);
+    
+    modalRef.componentInstance.livro = livro;
 	}
+
 }
