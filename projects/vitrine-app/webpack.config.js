@@ -30,20 +30,6 @@ module.exports = {
   },
   module: {
     rules: [
-      // {
-      //   test: /\.scss$/i,
-      //   use: [
-      //   MiniCssExtractPlugin.loader,
-      // {
-      //     loader: 'css-loader',
-      //     options: {
-      //         url: false
-      //     } 
-      // }, 
-      // 'resolve-url-loader', 
-      // 'sass-loader'
-      //   ],
-      // },
       {
         test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, "css-loader"],
@@ -55,7 +41,6 @@ module.exports = {
     new ModuleFederationPlugin({
         remotes: {
             "livrosApp": "http://localhost:4300/remoteEntry.js",
-            // "editorasApp": "http://localhost:4200/remoteEntry.js",
         },
 
         shared: share({
