@@ -38,11 +38,6 @@ export class FormUpdateComponent {
 		console.log(this.geners);
 		console.log(this.activatedModal);
 
-		this.newBookForm.patchValue({
-			description:  new FormControl('', Validators.required),
-			price:  new FormControl('', Validators.required),
-		});
-
   }
 
 	updateBookFields() {

@@ -63,11 +63,12 @@
     <div class="col">
       <fieldset class="container">
         <div class="row description-picture-area">
-          <h2>Novos</h2>
+          <h2>Descrição</h2>
           <section class="container">
             <div class="row">
-              <label for="description-input">Descrição</label>
-              <input formControlName="description" type="text" class="form-control" id="description-input" aria-describedby="descriptionTextBox" placeholder="Insira aqui a descrição">
+              <section class="container description-section">
+                <textarea formControlName="description" class="description-input" wrap="hard" type="text"  placeholder="Informe uma descrição"></textarea>
+              </section>
             </div>
           </section>
         </div>
