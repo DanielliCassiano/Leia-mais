@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormBuilder, ReactiveFormsModule} from '@angular/forms';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { LivrosService } from '../services/livros.service';
+import { FormUpdateComponent } from '../components/form-update/form-update.component';
 
 @Component({
   selector: 'app-root',
@@ -19,11 +19,13 @@ import { LivrosService } from '../services/livros.service';
     CommonModule,
     RouterModule,
     NgbDropdownModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormUpdateComponent
   ],
 })
 export class LivrosComponent implements OnInit {
   active = 1;
+  livrosForm = true;
   geners = ['Fantasia', 'Mistério', 'Romance', "Ficção"];
   publishers = ['Aleph'];
 
@@ -52,8 +54,8 @@ export class LivrosComponent implements OnInit {
     console.log(this.newBookForm.value);
     if(this.newBookForm.valid) {
       this.service.createLivro(this.newBookForm.value).subscribe({
-        next: value => console.log('Sucesso', value),
-        error: err => console.log(err),
+        next: (value) => console.log('Sucesso', value),
+        error: (err) => console.log(err),
         complete: () => console.log('Completo!!')
       });
     }

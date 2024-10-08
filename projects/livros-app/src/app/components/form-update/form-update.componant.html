@@ -1,0 +1,171 @@
+
+<form *ngIf="activatedModal" [formGroup]="newBookForm">
+    <section class="info-section">
+      <div class="d-flex justify-content-around">
+        <div class="image-area">
+          <span>Image here</span>
+        </div>
+        <div class="container info-middle-content">
+          <div class="row">
+            <h2>{{ livro.title }}: {{ livro.subTitle }}</h2>
+          </div>
+          <div class="row">
+            <div class="d-flex justify-content-around">
+              <div formControlName="geners" value = ""><span>{{ livro.publisher }}</span></div>
+              <div formControlName="geners"><span>{{ livro.geners }}</span></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="d-flex justify-content-around">
+              <div><span>{{ livro.authorName }}</span></div>
+              <div><span>{{ livro.releaseDate }}</span></div>
+              <div><span>{{ livro.pagesNum }}</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="container info-middle-content">
+          <div class="row">
+            <div class="col">
+              <label for="price-input">{{ livro.price }}</label>
+              <input formControlName="price" type="text" class="form-control" id="price-input" aria-describedby="priceTextBox" placeholder="Informe o preço">
+            </div>
+          </div>
+          <div class="row">
+            <div class="d-flex justify-content-around">
+              <div class="row">
+                <label>Disponível</label>
+                <div class="col">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="available" id="yes-inlineRadio" value="yes">
+                    <label class="form-check-label" for="yes-inlineRadio">Sim</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="available" id="no-inlineRadio" value="no">
+                    <label class="form-check-label" for="no-inlineRadio2">Não</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container description-section">
+      <textarea formControlName="description" class="description-input" wrap="hard" type="text"></textarea>
+    </section>
+    <div class="d-flex justify-content-evenly">
+      <button [disabled]="!newBookForm.valid" type="button" class="btn btn-outline-secondary" type="submit" (click)="updateBookFields()">Editar</button>
+      <button type="button" class="btn btn-outline-secondary">Excluir</button>
+    </div>
+</form>
+<form *ngIf="livrosForm && !activatedModal" class="container form-group" [formGroup]="newBookForm" (ngSubmit)="onSubmit()">
+  <section class="row">
+    <div class="col">
+      <fieldset class="container">
+        <div class="row description-picture-area">
+          <h2>Novos</h2>
+          <section class="container">
+            <div class="row">
+              <label for="description-input">Descrição</label>
+              <input formControlName="description" type="text" class="form-control" id="description-input" aria-describedby="descriptionTextBox" placeholder="Insira aqui a descrição">
+            </div>
+          </section>
+        </div>
+      </fieldset>
+    </div>
+    <div class="col">
+      <fieldset class="container">
+        <div class="row form-fiels-area">
+          <section class="container">
+            <div class="row">
+              <div class="col">
+                <label for="title-input">Título</label>
+                <input formControlName="title" type="text" class="form-control" id="title-input" aria-describedby="titleTextBox" placeholder="Informe o título">
+              </div>
+              <div class="col">
+                <label for="subtitle-input">Subtítulo</label>
+                <input formControlName="subTitle" type="text" class="form-control" id="subtitle-input" aria-describedby="subtitleTextBox" placeholder="Informe o subtítulo">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label for="authorName-input">Nome do autor</label>
+                <input formControlName="authorName" type="text" class="form-control" id="authorName-input" aria-describedby="authorNameTextBox" placeholder="Informe o nome do autor">
+              </div>
+              <div class="col">
+                <div class="row">
+                  <label for="dropdown-publisher">Editora</label>
+                  <div class="col">
+                    <select formControlName="publisher" name="publisher" id="dropdown-publisher">
+                      <option [defaultSelected]=true value="default" >Selecione uma editora</option>
+                      <option *ngFor="let publisher of publishers" Value="publisher">
+                        {{ publisher }}
+                      </option>
+                    </select>                        
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label for="releaseDate-input">Data de publicação</label>
+                <input formControlName="releaseDate" type="text" class="form-control" id="releaseDate-input" aria-describedby="releaseDateTextBox" placeholder="Informe data de publicação">
+              </div>
+              <div class="col">
+                <div class="container">
+                  <div class="row">
+                    <label>Disponível</label>
+                    <div class="col">
+                      <div class="form-check form-check-inline">
+                        <input formControlName="available" class="form-check-input" type="radio" name="available" id="yes-inlineRadio" value="yes">
+                        <label class="form-check-label" for="yes-inlineRadio">Sim</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input formControlName="available"  class="form-check-input" type="radio" name="available" id="no-inlineRadio" value="no">
+                        <label class="form-check-label" for="no-inlineRadio2">Não</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="row">
+                  <label for="dropdown-genres">Gênero principal</label>
+                  <div class="col">
+                    <select formControlName="geners" name="geners" id="dropdown-geners">
+                      <option [defaultSelected]=true value="default" >Selecione um gênero</option>
+                      <option *ngFor="let gener of geners" Value="gener">
+                        {{ gener }}
+                      </option>
+                    </select>                         
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <label for="language-input">Idioma</label>
+                <input formControlName="language" type="text" class="form-control" id="language-input" aria-describedby="languageTextBox" placeholder="Informe o idioma">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label for="price-input">Valor por unidade</label>
+                <input formControlName="price" type="text" class="form-control" id="price-input" aria-describedby="priceTextBox" placeholder="Informe o preço">
+              </div>
+              <div class="col">
+                <label for="pagesNum-input">Número de páginas</label>
+                <input formControlName="pagesNum" type="text" class="form-control" id="pagesNum-input" aria-describedby="pagesNumTextBox" placeholder="Informe o número de páginas">
+              </div>
+            </div>
+          </section>
+        </div>
+      </fieldset>
+    </div>
+  </section>
+  <section class="row">
+    <div class="col">
+      <button [disabled]="!newBookForm.valid" type="submit" class="btn btn-primary-green button-activated">Adicionar</button>
+    </div>
+  </section>
+</form>
